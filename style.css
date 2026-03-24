@@ -1,0 +1,8 @@
+/* ── RESET & BASE ── / , ::before, ::after { box-sizing: border-box;
+margin: 0; padding: 0; }
+
+:root { –teal: #1AADAD; –teal-dark: #0D8080; –teal-light: #E8F8F8;
+–dark: #1A2B35; –gray: #F4F6F7; –mid-gray: #6B7F8A; –white: #FFFFFF;
+–orange: #FF2800; –green: #27AE60; }
+
+/* … CSS CONTENT … */
