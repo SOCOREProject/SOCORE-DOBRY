@@ -35,16 +35,28 @@ p  { font-size: clamp(15px, 1.5vw, 17px); }
 
 /* ── NAV ── */
 nav {
+  {
   background: var(--dark);
   padding: 14px 24px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
   z-index: 100;
 }
-  .nav-logo {
+/* To sprawi, że lewa część zajmie tylko tyle, ile potrzebuje,
+   a przycisk CTA zostanie wypchnięty maksymalnie w prawo */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: auto; /* ← to klucz */
+}
+
+.nav-cta {
+  flex-shrink: 0; /* Zapobiega kurczeniu się przycisku */
+}
+.nav-logo {
   display: flex;
   align-items: center;
   gap: 26px;
