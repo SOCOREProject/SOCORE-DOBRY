@@ -12,6 +12,11 @@
   --orange:     #FF2800; /* Ferrari Red */
   --green:      #27AE60;
 }
+.logo-img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
 
 html { scroll-behavior: smooth; }
 
