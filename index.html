@@ -1,41 +1,482 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dołącz do RSG SOCORE — Regionalna Grupa Interesariuszy</title>
+<meta name="description" content="Regionalna Grupa Interesariuszy projektu SOCORE — bezpłatne uczestnictwo, realny wpływ na polityki innowacji Śląska finansowane z Europejskich Funduszy 2021–2027.">
 
-  <title>Dołącz do RSG SOCORE — Regionalna Grupa Interesariuszy</title>
-  <meta name="description" content="Regionalna Grupa Interesariuszy projektu SOCORE — bezpłatne uczestnictwo, realny wpływ na polityki innowacji Śląska finansowane z Europejskich Funduszy 2021–2027.">
+<!-- Open Graph (podgląd przy udostępnianiu w social media) -->
+<meta property="og:title" content="Dołącz do RSG SOCORE">
+<meta property="og:description" content="Twój głos ma znaczenie dla polityk innowacji Śląska. Dołącz do Regionalnej Grupy Interesariuszy — bezpłatnie.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://socore-project.github.io/socore_study_visit.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Dołącz do RSG SOCORE">
-  <meta property="og:description" content="Twój głos ma znaczenie dla polityk innowacji Śląska. Dołącz do Regionalnej Grupy Interesariuszy — bezpłatnie.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://socore-project.github.io/socore_study_visit.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+<style>
+  /* ── RESET & BASE ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <!-- Montserrat font -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  :root {
+    --teal:       #1AADAD;
+    --teal-dark:  #0D8080;
+    --teal-light: #E8F8F8;
+    --dark:       #1A2B35;
+    --gray:       #F4F6F7;
+    --mid-gray:   #6B7F8A;
+    --white:      #FFFFFF;
+    --orange:     #E67E22;
+    --green:      #27AE60;
+  }
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="style.css">
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--dark);
+    background: var(--white);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  h1 { font-size: clamp(28px, 5vw, 52px); font-weight: 900; line-height: 1.1; }
+  h2 { font-size: clamp(22px, 3.5vw, 36px); font-weight: 800; line-height: 1.2; }
+  h3 { font-size: clamp(16px, 2vw, 20px); font-weight: 700; }
+  p  { font-size: clamp(15px, 1.5vw, 17px); }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  .section    { padding: 72px 0; }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--dark);
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-socore {
+    background: var(--teal);
+    color: white;
+    font-weight: 800;
+    font-size: 14px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+  }
+  .nav-program {
+    font-size: 11px;
+    color: #8899AA;
+  }
+  .nav-cta {
+    background: var(--teal);
+    color: white;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background .2s;
+  }
+  .nav-cta:hover { background: var(--teal-dark); }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--teal-dark) 0%, #0A6060 60%, #083C3C 100%);
+    padding: 80px 24px 72px;
+    text-align: center;
+    color: white;
+  }
+  .hero-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #B2E6E6;
+    margin-bottom: 20px;
+  }
+  .hero h1 { color: white; margin-bottom: 24px; }
+  .hero h1 span { color: #B2E6E6; }
+  .hero-sub {
+    font-size: clamp(16px, 2vw, 20px);
+    color: #D0F0F0;
+    max-width: 640px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+  }
+  .hero-cta {
+    display: inline-block;
+    background: white;
+    color: var(--teal-dark);
+    font-weight: 800;
+    font-size: 17px;
+    padding: 16px 36px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform .2s, box-shadow .2s;
+    box-shadow: 0 4px 20px rgba(0,0,0,.2);
+  }
+  .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.25); }
+  .hero-note {
+    font-size: 13px;
+    color: rgba(255,255,255,.6);
+    margin-top: 14px;
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--dark);
+    padding: 32px 24px;
+  }
+  .stats-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    text-align: center;
+  }
+  .stat-num {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 900;
+    color: var(--teal);
+    display: block;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: #8899AA;
+    line-height: 1.4;
+  }
+  .stat-source {
+    font-size: 10px;
+    color: #556677;
+    margin-top: 4px;
+    font-style: italic;
+  }
+  .stat-divider {
+    border-left: 1px solid #2D3F4D;
+  }
+
+  /* ── SOCIAL PROOF ── */
+  .social-proof { background: var(--teal-light); padding: 48px 24px; }
+  .proof-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+  .proof-quote { font-size: clamp(17px,2.2vw,22px); font-weight: 700; color: var(--dark); line-height: 1.55; margin-bottom: 20px; font-style: italic; position: relative; padding: 0 20px; }
+  .proof-mark { font-size: 3em; color: var(--teal); line-height: 0; vertical-align: -0.4em; margin: 0 4px; }
+  .proof-author { font-size: 15px; font-weight: 700; color: var(--teal-dark); }
+  .proof-role { font-size: 13px; color: var(--mid-gray); margin-top: 4px; }
+  /* ── URGENCY BAR ── */
+  .urgency-bar { background: var(--orange); padding: 13px 24px; text-align: center; color: white; font-size: 15px; font-weight: 700; }
+  .urgency-bar span { opacity: .8; font-weight: 400; }
+  /* ── PHOTO STRIP ── */
+  .photo-strip { width:100%; height:300px; background: linear-gradient(135deg,#0D8080 0%,#083C3C 100%); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:12px; position:relative; }
+  .photo-cap { position:absolute; bottom:0; left:0; right:0; background:rgba(13,128,128,.8); color:white; font-size:13px; padding:10px 24px; text-align:center; font-style:italic; }
+  /* ── NEXT STEPS ── */
+  .next-steps { display:flex; gap:0; margin-top:32px; background:rgba(255,255,255,.06); border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,.1); }
+  .next-step { flex:1; padding:20px 14px; text-align:center; border-right:1px solid rgba(255,255,255,.08); }
+  .next-step:last-child { border-right:none; }
+  .next-step-num { width:32px;height:32px;background:var(--teal);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;margin:0 auto 10px; }
+  .next-step h4 { color:white;font-size:13px;margin-bottom:5px; }
+  .next-step p { color:#8899AA;font-size:12px;line-height:1.4; }
+  /* ── ALT CTA ── */
+  .alt-cta { text-align:center;margin-top:18px;font-size:14px;color:#8899AA; }
+  .alt-cta a { color:var(--teal);font-weight:700;text-decoration:none; }
+  .alt-cta a:hover { color:white; }
+  /* ── PROBLEM SECTION ── */
+  .problem { background: var(--gray); }
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-top: 48px;
+  }
+  .problem-text p { color: var(--mid-gray); margin-bottom: 16px; }
+  .problem-text p strong { color: var(--dark); }
+  .problem-highlight {
+    background: white;
+    border-left: 5px solid var(--teal);
+    padding: 24px 28px;
+    border-radius: 0 10px 10px 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1.5;
+  }
+  .problem-highlight span { color: var(--teal-dark); }
+
+  /* ── WHAT IS RSG ── */
+  .what-section { background: white; }
+  .what-section .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--teal);
+    margin-bottom: 12px;
+  }
+  .what-section h2 { margin-bottom: 20px; }
+  .what-section > .container > p { color: var(--mid-gray); max-width: 640px; margin-bottom: 48px; }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 8px;
+  }
+  .step {
+    background: var(--gray);
+    border-radius: 12px;
+    padding: 28px 24px;
+    position: relative;
+  }
+  .step-num {
+    width: 36px;
+    height: 36px;
+    background: var(--teal-dark);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+  .step h3 { margin-bottom: 10px; }
+  .step p { font-size: 14px; color: var(--mid-gray); line-height: 1.55; }
+
+  /* ── BENEFITS ── */
+  .benefits { background: var(--teal-dark); }
+  .benefits h2 { color: white; text-align: center; margin-bottom: 48px; }
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .benefit-card {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .benefit-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: rgba(255,255,255,.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .benefit-text h3 { color: white; margin-bottom: 6px; font-size: 16px; }
+  .benefit-text p  { color: #B2E6E6; font-size: 14px; line-height: 1.5; }
+
+  /* ── COMMITMENT ── */
+  .commitment { background: white; text-align: center; }
+  .commitment h2 { margin-bottom: 16px; }
+  .commitment > .container > p { color: var(--mid-gray); margin-bottom: 48px; }
+  .commit-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .commit-item {
+    background: var(--teal-light);
+    border-radius: 12px;
+    padding: 28px 20px;
+    text-align: center;
+  }
+  .commit-num {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 900;
+    color: var(--teal-dark);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .commit-label { font-size: 14px; color: var(--mid-gray); line-height: 1.4; }
+
+  /* ── ABOUT PROJECT ── */
+  .about { background: var(--gray); }
+  .about h2 { margin-bottom: 20px; }
+  .about p  { color: var(--mid-gray); margin-bottom: 16px; max-width: 680px; }
+  .partners-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 28px;
+  }
+  .partner-pill {
+    background: white;
+    border: 1px solid #D0E0E0;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 13px;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* ── FORM SECTION ── */
+  .form-section { background: var(--dark); padding: 72px 24px; }
+  .form-inner {
+    max-width: 560px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .form-inner h2 { color: white; margin-bottom: 12px; }
+  .form-inner > p { color: #8899AA; margin-bottom: 36px; font-size: 15px; }
+
+  form { text-align: left; }
+  .field { margin-bottom: 16px; }
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #8899AA;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    margin-bottom: 8px;
+  }
+  input, select, textarea {
+    width: 100%;
+    background: rgba(255,255,255,.06);
+    border: 1.5px solid rgba(255,255,255,.12);
+    border-radius: 8px;
+    padding: 13px 16px;
+    font-size: 15px;
+    color: white;
+    font-family: Arial, sans-serif;
+    transition: border-color .2s;
+    outline: none;
+  }
+  input::placeholder, textarea::placeholder { color: #4A5F6A; }
+  input:focus, select:focus, textarea:focus { border-color: var(--teal); }
+  select option { background: var(--dark); color: white; }
+  textarea { resize: vertical; min-height: 80px; }
+
+  .submit-btn {
+    width: 100%;
+    background: var(--teal);
+    color: white;
+    font-weight: 800;
+    font-size: 17px;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background .2s, transform .15s;
+    font-family: Arial, sans-serif;
+  }
+  .submit-btn:hover { background: var(--teal-dark); transform: translateY(-1px); }
+
+  .form-legal {
+    font-size: 11px;
+    color: #4A5F6A;
+    text-align: center;
+    margin-top: 16px;
+    line-height: 1.5;
+  }
+
+  /* ── SUCCESS STATE ── */
+  .success-box {
+    display: none;
+    background: rgba(26,173,173,.15);
+    border: 1.5px solid var(--teal);
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+  }
+  .success-box .checkmark { font-size: 48px; margin-bottom: 16px; }
+  .success-box h3 { color: white; margin-bottom: 8px; }
+  .success-box p  { color: #8899AA; font-size: 14px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0D1920;
+    padding: 32px 24px;
+    text-align: center;
+  }
+  .footer-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .f-interreg {
+    background: var(--teal);
+    color: white;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+  .f-eu {
+    background: #003399;
+    color: #FFD700;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+  .f-socore {
+    background: transparent;
+    border: 1.5px solid var(--teal);
+    color: var(--teal);
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+  }
+  .footer-text {
+    font-size: 11px;
+    color: #4A5F6A;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .problem-grid    { grid-template-columns: 1fr; }
+    .steps           { grid-template-columns: 1fr; }
+    .benefits-grid   { grid-template-columns: 1fr; }
+    .commit-row      { grid-template-columns: 1fr; }
+    .stats-inner     { grid-template-columns: 1fr; gap: 28px; }
+    .stat-divider    { border-left: none; border-top: 1px solid #2D3F4D; padding-top: 28px; }
+  }
+</style>
 </head>
-
 <body>
 
 <!-- NAV -->
 <nav>
-
-  <a href="#form" class="nav-cta">Dołącz do RSG →</a>
-</nav>
-  <nav>
-  <div class="nav-left">
-    <img src="SOCORE_Logo.jpg" alt="Logo SOCORE" class="nav-logo-img">
-    <div class="nav-texts">
-      <div class="nav-socore">SOCORE</div>
-      <div class="nav-program">Interreg Europe 2025–2029</div>
-    </div>
+  <div class="nav-logo">
+    <div class="nav-socore">SOCORE</div>
+    <div class="nav-program">Interreg Europe 2025–2029</div>
   </div>
   <a href="#form" class="nav-cta">Dołącz do RSG →</a>
 </nav>
@@ -121,17 +562,17 @@
       <div class="step">
         <div class="step-num">1</div>
         <h3>Diagnoza regionalna</h3>
-        <p>Wspólnie identyfikujemy mocne strony i luki kompetencyjne w śląskim ekosystemie badań i innowacji.</p>
+        <p>Wspólnie identyfikujemy mocne strony i luki kompetencyjne w śląskim ekosystemie badań i innowacji. Twoja perspektywa praktyczna jest kluczowa.</p>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <h3>Wymiana z Europą</h3>
-        <p>Porównujemy śląskie praktyki z doświadczeniami z Holandii, Portugalii, Włoch i Litwy.</p>
+        <p>Porównujemy śląskie praktyki z doświadczeniami z Holandii, Portugalii, Włoch i Litwy. Dobre praktyki które można przenieść — identyfikujemy razem.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <h3>Rekomendacje do polityk</h3>
-        <p>Wypracowane wnioski trafiają do instrumentów wsparcia B+R+I.</p>
+        <p>Wypracowane wnioski trafiają do instrumentów wsparcia B+R+I w ramach Europejskich Funduszy dla Śląska. Twój głos kształtuje te rekomendacje.</p>
       </div>
     </div>
   </div>
@@ -146,39 +587,34 @@
         <div class="benefit-icon">📊</div>
         <div class="benefit-text">
           <h3>Dane i benchmarking europejski</h3>
-          <p>Wyniki badań z Holandii, Portugalii, Włoch i Litwy.</p>
+          <p>Wyniki badań z Holandii, Portugalii, Włoch i Litwy — gotowe do cytowania w dokumentach strategicznych, planach i raportach.</p>
         </div>
       </div>
-
       <div class="benefit-card">
         <div class="benefit-icon">🎯</div>
         <div class="benefit-text">
           <h3>Wpływ na polityki regionalne</h3>
-          <p>Udział w tworzeniu rekomendacji do Europejskich Funduszy dla Śląska.</p>
+          <p>Bezpośredni udział w wypracowaniu rekomendacji do instrumentów wsparcia B+R+I w ramach EFS 2021–2027 i RIS Śląsk 2030.</p>
         </div>
       </div>
-
       <div class="benefit-card">
         <div class="benefit-icon">🌍</div>
         <div class="benefit-text">
           <h3>Sieć kontaktów europejskich</h3>
-          <p>Realna współpraca, nie wymiana wizytówek.</p>
+          <p>Bezpośrednie relacje z instytucjami zarządzającymi funduszami B+R+I w 5 krajach UE. Nie wymiana wizytówek — wspólna praca.</p>
         </div>
       </div>
-
       <div class="benefit-card">
         <div class="benefit-icon">🏆</div>
         <div class="benefit-text">
           <h3>Widoczność w projekcie UE</h3>
-          <p>Udział w wydarzeniach międzynarodowych i dokumentach projektowych.</p>
+          <p>Cytowanie w raportach Interreg Europe, udział w spotkaniach z partnerami z 6 krajów, widoczność w komunikacji programowej.</p>
         </div>
       </div>
     </div>
-    <p style="text-align:center;margin-top:36px;font-size:16px;color:#B2E6E6;font-style:italic;">
-      Pełne możliwości uczestnictwa omawiamy na pierwszym spotkaniu RSG.
-    </p>
+    <p style="text-align:center;margin-top:36px;font-size:16px;color:#B2E6E6;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto;padding:0 24px;">Pełne możliwości uczestnictwa omawiamy na pierwszym spotkaniu RSG. Zapisz się — i przekonaj się osobiście.</p>
     <div style="text-align:center;margin-top:20px;">
-      <a href="#form" style="display:inline-block;background:white;color:var(--teal-dark);font-weight:800;font-size:15px;padding:12px 28px;border-radius:7px;text-decoration:none;">Zgłoś się na spotkanie →</a>
+      <a href="#form" style="display:inline-block;background:white;color:var(--teal-dark);font-weight:800;font-size:15px;padding:12px 28px;border-radius:7px;text-decoration:none;">Zgłoś się na pierwsze spotkanie →</a>
     </div>
   </div>
 </section>
@@ -191,36 +627,36 @@
     <div class="commit-row">
       <div class="commit-item">
         <span class="commit-num">2×</span>
-        <div class="commit-label">spotkania RSG rocznie</div>
+        <div class="commit-label">spotkania RSG rocznie — online lub stacjonarnie w Katowicach</div>
       </div>
       <div class="commit-item">
         <span class="commit-num">0 zł</span>
-        <div class="commit-label">koszt uczestnictwa</div>
+        <div class="commit-label">koszt uczestnictwa — projekt jest w całości finansowany przez Interreg Europe</div>
       </div>
       <div class="commit-item">
         <span class="commit-num">opcja</span>
-        <div class="commit-label">udział w ankietach</div>
+        <div class="commit-label">udział w ankietach i wywiadach badawczych — nieobowiązkowy, 30–60 min</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ABOUT PROJECT -->
 <section class="section about">
   <div class="container">
     <h2>O projekcie SOCORE</h2>
-    <p>SOCORE to projekt Interreg Europe (2025–2029) realizowany przez 9 partnerów z 6 krajów Europy.</p>
-
+    <p>SOCORE to projekt Interreg Europe (2025–2029) realizowany przez <strong>9 partnerów z 6 krajów Europy</strong>. Jego serce jest proste: regiony, które chcą lepiej wdrażać innowacje, muszą inwestować nie tylko w technologię — ale w ludzi, którzy potrafią ze sobą współpracować, budować zaufanie i przekładać wiedzę na realne działania.</p>
+    <p>Koordynuje <strong>dr Maria Szczepańska-Woszczyna</strong>, Uniwersytet Śląski w Katowicach. Projekt jest współfinansowany przez Interreg Europe ze środków Europejskiego Funduszu Rozwoju Regionalnego.</p>
     <div class="partners-row">
-      <div class="partner-pill">🇵🇱 Uniwersytet Śląski</div>
-      <div class="partner-pill">🇵🇱 Urząd Marszałkowski Śląskie</div>
+      <div class="partner-pill">🇵🇱 Uniwersytet Śląski w Katowicach</div>
+      <div class="partner-pill">🇵🇱 Urząd Marszałkowski Woj. Śląskiego</div>
       <div class="partner-pill">🇳🇱 Provincie Utrecht</div>
       <div class="partner-pill">🇳🇱 HU University of Applied Sciences</div>
       <div class="partner-pill">🇮🇹 ANCI Liguria</div>
-      <div class="partner-pill">🇵🇹 CIMBAL</div>
+      <div class="partner-pill">🇵🇹 CIMBAL / Baixo Alentejo</div>
       <div class="partner-pill">🇱🇹 Lithuanian Innovation Centre</div>
       <div class="partner-pill">🇲🇩 NARD Moldova</div>
-      <div class="partner-pill">🇲🇩 Ministry of Education Moldova</div>
+      <div class="partner-pill">🇲🇩 Ministry of Education and Research (Moldova)</div>
     </div>
   </div>
 </section>
@@ -230,43 +666,40 @@
   <div class="form-inner">
     <h2>Dołącz do RSG SOCORE</h2>
     <p style="color:#8899AA;margin-bottom:6px;">Trzy pola — 30 sekund.</p>
+    <p style="font-size:13px;color:var(--teal);margin-bottom:28px;">🗓️ Kolejne spotkanie: <strong style="color:white;">czerwiec 2026, Katowice</strong></p>
 
     <form id="rsg-form" onsubmit="handleSubmit(event)">
       <div class="field">
         <label for="name">Imię i nazwisko *</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" placeholder="Jan Kowalski" required>
       </div>
-
       <div class="field">
-        <label for="org">Instytucja *</label>
-        <input type="text" id="org" name="org" required>
+        <label for="org">Instytucja / Organizacja *</label>
+        <input type="text" id="org" name="org" placeholder="Nazwa instytucji" required>
       </div>
-
       <div class="field">
         <label for="email">Adres e-mail *</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" placeholder="jan.kowalski@instytucja.pl" required>
       </div>
-
       <button type="submit" class="submit-btn">Zgłaszam się na spotkanie RSG →</button>
-
-      <p class="form-legal">
-        Przesyłając formularz wyrażasz zgodę na kontakt w sprawie projektu SOCORE.
-      </p>
+      <p class="form-legal">Przesyłając formularz wyrażasz zgodę na kontakt w sprawie projektu SOCORE. Dane nie będą przekazywane podmiotom trzecim. Administratorem danych jest Uniwersytet Śląski w Katowicach.</p>
     </form>
 
     <div class="next-steps">
-      <div class="next-step"><div class="next-step-num">1</div><h4>Potwierdzenie</h4><p>E-mail w kilka minut</p></div>
-      <div class="next-step"><div class="next-step-num">2</div><h4>Rozmowa</h4><p>Oddzwonimy w 48h</p></div>
-      <div class="next-step"><div class="next-step-num">3</div><h4>Spotkanie</h4><p>Katowice, czerwiec 2026</p></div>
+      <div class="next-step"><div class="next-step-num">1</div><h4>Potwierdzenie</h4><p>Dostaniesz e-mail w ciągu kilku minut</p></div>
+      <div class="next-step"><div class="next-step-num">2</div><h4>Rozmowa z nami</h4><p>Odezwiemy się w 48h — 20 minut na Twoje pytania</p></div>
+      <div class="next-step"><div class="next-step-num">3</div><h4>Spotkanie RSG</h4><p>Zaproszenie na czerwcowe spotkanie w Katowicach</p></div>
     </div>
 
-    <div class="alt-cta">Wolisz napisać? <a href="mailto:socore@us.edu.pl">socore@us.edu.pl</a></div>
+    <div class="alt-cta">Wolisz najpierw porozmawiać? <a href="mailto:socore@us.edu.pl">Napisz bezpośrednio →</a></div>
 
     <div class="success-box" id="success-box">
       <div class="checkmark">✅</div>
       <h3>Zgłoszenie przyjęte!</h3>
-      <p>Odezwiemy się w ciągu 3 dni roboczych.</p>
+      <p>Dziękujemy za zainteresowanie. Skontaktujemy się z Tobą w ciągu 3 dni roboczych na podany adres e-mail.</p>
+      <p style="margin-top:12px;">W razie pytań: <a href="mailto:socore@us.edu.pl" style="color:var(--teal);">socore@us.edu.pl</a></p>
     </div>
+
   </div>
 </section>
 
@@ -274,25 +707,33 @@
 <footer>
   <div class="footer-logos">
     <div class="f-interreg">Interreg Europe</div>
-    <div class="f-eu">Co-funded by the EU</div>
+    <div class="f-eu">Co-funded by the European Union</div>
     <div class="f-socore">SOCORE</div>
   </div>
   <p class="footer-text">
-    SOCORE (03C0934) — Interreg Europe · Uniwersytet Śląski
+    SOCORE (nr projektu 03C0934) jest współfinansowany przez Program Interreg Europe ze środków Europejskiego Funduszu Rozwoju Regionalnego.<br>
+    Koordynator: Uniwersytet Śląski w Katowicach · <a href="mailto:socore@us.edu.pl" style="color:#8899AA;">socore@us.edu.pl</a> · <a href="http://www.socore-project.eu" style="color:#8899AA;">www.socore-project.eu</a>
   </p>
 </footer>
 
 <script>
-const FORM_ACTION = "YOUR_FORMSPREE_URL";
+// ── FORM HANDLER ──
+// UWAGA DLA OLI: zamień ACTION_URL na adres Twojego formularza (Formspree lub inny)
+// Instrukcja: https://formspree.io → New Form → wklej URL tutaj
+
+const FORM_ACTION = "YOUR_FORMSPREE_URL"; // ← ZMIEŃ TO
 
 async function handleSubmit(e) {
   e.preventDefault();
+
   const btn = document.querySelector('.submit-btn');
   btn.textContent = "Wysyłanie...";
   btn.disabled = true;
 
-  const data = Object.fromEntries(new FormData(e.target));
+  const formData = new FormData(e.target);
+  const data = Object.fromEntries(formData);
 
+  // Jeśli nie ma Formspree — pokaż sukces po 1s (do testowania wyglądu)
   if (FORM_ACTION === "YOUR_FORMSPREE_URL") {
     setTimeout(() => {
       document.getElementById('rsg-form').style.display = 'none';
@@ -307,22 +748,22 @@ async function handleSubmit(e) {
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(data)
     });
-
     if (res.ok) {
       document.getElementById('rsg-form').style.display = 'none';
       document.getElementById('success-box').style.display = 'block';
     } else {
-      alert("Błąd. Napisz: socore@us.edu.pl");
-      btn.disabled = false;
       btn.textContent = "Spróbuj ponownie";
+      btn.disabled = false;
+      alert("Coś poszło nie tak. Napisz bezpośrednio na socore@us.edu.pl");
     }
   } catch {
-    alert("Błąd połączenia.");
-    btn.disabled = false;
     btn.textContent = "Spróbuj ponownie";
+    btn.disabled = false;
+    alert("Błąd połączenia. Napisz na socore@us.edu.pl");
   }
 }
 
+// ── SMOOTH SCROLL dla starszych przeglądarek ──
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const target = document.querySelector(a.getAttribute('href'));
