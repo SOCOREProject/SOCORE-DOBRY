@@ -874,5 +874,17 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   <a href="#">Dowiedz się więcej</a>
   <button onclick="acceptCookies()">Akceptuję</button>
 </div>
+  <script>
+function acceptCookies() {
+  localStorage.setItem("cookiesAccepted", "true");
+  document.getElementById("cookie-banner").style.display = "none";
+}
+
+window.onload = function() {
+  if (localStorage.getItem("cookiesAccepted") === "true") {
+    document.getElementById("cookie-banner").style.display = "none";
+  }
+};
+</script>
 </body>
 </html>
