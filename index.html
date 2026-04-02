@@ -815,18 +815,22 @@
   <img src="mapa.png" alt="Mapa partnerów SOCORE">
 </div>
 
-<div class="partners-row">      
-      <div class="partner-pill">🇵🇱 Uniwersytet Śląski w Katowicach</div>
-      <div class="partner-pill">🇵🇱 Urząd Marszałkowski Województwa Śląskiego</div>
-      <div class="partner-pill">🇳🇱 Provincie Utrecht</div>
-      <div class="partner-pill">🇳🇱 HU University of Applied Sciences Utrecht</div>
-      <div class="partner-pill">🇮🇹 ANCI Liguria</div>
-      <div class="partner-pill">🇵🇹 Baixo Alentejo Intermunicipal Community</div>
-      <div class="partner-pill">🇱🇹 Public Institution Lithuanian Innovation Centre</div>
-      <div class="partner-pill">🇲🇩 National Agency for Research and Development</div>
-      <div class="partner-pill">🇲🇩 Ministry of Education and Research</div>
-    </div>
-  </div>
+<div class="partners-grid">
+
+  <div class="partner-card" onclick="showPartner('us')">🇵🇱 Uniwersytet Śląski</div>
+  <div class="partner-card" onclick="showPartner('um')">🇵🇱 Urząd Marszałkowski</div>
+  <div class="partner-card" onclick="showPartner('utrecht')">🇳🇱 Provincie Utrecht</div>
+  <div class="partner-card" onclick="showPartner('hu')">🇳🇱 HU Utrecht</div>
+  <div class="partner-card" onclick="showPartner('anci')">🇮🇹 ANCI Liguria</div>
+  <div class="partner-card" onclick="showPartner('baixo')">🇵🇹 Baixo Alentejo</div>
+  <div class="partner-card" onclick="showPartner('lic')">🇱🇹 Innovation Centre</div>
+  <div class="partner-card" onclick="showPartner('nard')">🇲🇩 NARD</div>
+  <div class="partner-card" onclick="showPartner('mer')">🇲🇩 Ministry of Education</div>
+
+</div>
+
+<!-- 🔥 PANEL OPISU -->
+<div id="partner-info" class="partner-info"></div>
 </section>
 
 <!-- FORM -->
