@@ -355,17 +355,24 @@
     gap: 8px;
     margin-top: 28px;
   }
-  .partner-pill {
-    background: white;
-    border: 1px solid #D0E0E0;
-    border-radius: 20px;
-    padding: 6px 14px;
-    font-size: 13px;
-    color: var(--dark);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
+ .partner-pill {
+  background: white;
+  border: 1px solid #D0E0E0;
+  border-radius: 999px; /* 🔥 pill shape */
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dark);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  transition: all 0.25s ease;
+  cursor: default;
+
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
 
   /* ── FORM SECTION ── */
   .form-section { background: var(--dark); padding: 72px 24px; }
