@@ -563,6 +563,31 @@
   z-index: 999;
   font-size: 13px;
 }
+  .partners {
+  background: white;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.partner-card {
+  background: var(--gray);
+  border-radius: 10px;
+  padding: 16px 14px;
+  font-size: 14px;
+  text-align: center;
+  color: var(--dark);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.partner-card:hover {
+  transform: translateY(-3px);
+  background: var(--teal-light);
+}
 </style>
 </head>
 <body>
