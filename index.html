@@ -350,11 +350,11 @@
   .about h2 { margin-bottom: 20px; }
   .about p  { color: var(--mid-gray); margin-bottom: 16px; max-width: 680px; }
   .partners-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 28px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center; /* 🔥 wygląda lepiej */
+}
  .partner-pill {
   background: white;
   border: 1px solid #D0E0E0;
@@ -372,6 +372,12 @@
   cursor: default;
 
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.partner-pill:hover {
+  transform: translateY(-3px);
+  background: var(--teal-light);
+  border-color: var(--teal);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
   /* ── FORM SECTION ── */
