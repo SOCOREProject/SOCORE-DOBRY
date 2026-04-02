@@ -645,13 +645,21 @@
 
   box-shadow: 0 4px 14px rgba(0,0,0,0.06);
 }
-
+.partner-info {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 12px;
+  background: white;
+  border: 1px solid #D0E0E0;
+  display: none;
+}
 .partner-card:hover {
   transform: translateY(-4px);
   background: var(--teal-light);
   border-color: var(--teal);
   box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
+  
 </style>
 </head>
 <body>
@@ -1024,6 +1032,26 @@ window.addEventListener("load", function() {
   updateCountdown();
   setInterval(updateCountdown, 60000);
 });
+</script>
+  <script>
+function showPartner(id) {
+  const info = document.getElementById("partner-info");
+
+  const data = {
+    us: "Uniwersytet Śląski w Katowicach – koordynator projektu SOCORE.",
+    um: "Urząd Marszałkowski – odpowiedzialny za polityki regionalne.",
+    utrecht: "Provincie Utrecht – partner z Holandii.",
+    hu: "HU University – uczelnia badawcza.",
+    anci: "ANCI Liguria – reprezentacja regionów włoskich.",
+    baixo: "Baixo Alentejo – partner z Portugalii.",
+    lic: "Lithuanian Innovation Centre – wsparcie innowacji.",
+    nard: "National Agency for Research and Development.",
+    mer: "Ministry of Education and Research – Mołdawia."
+  };
+
+  info.innerHTML = data[id];
+  info.style.display = "block";
+}
 </script>
 </body>
 </html>
