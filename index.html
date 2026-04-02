@@ -625,6 +625,33 @@
   border-radius: 6px;
   white-space: nowrap;
 }
+  .partners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.partner-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+
+  border: 1px solid #D0E0E0;
+  transition: all 0.25s ease;
+
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+.partner-card:hover {
+  transform: translateY(-4px);
+  background: var(--teal-light);
+  border-color: var(--teal);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
 </style>
 </head>
 <body>
