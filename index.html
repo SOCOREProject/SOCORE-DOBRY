@@ -283,8 +283,8 @@ position: relative;
   flex: 1;
   max-width: 260px;
 
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: white; /* 🔥 ważne */
+  border: 2px solid #00a984; /* 🔥 zielona ramka */
   border-radius: 16px;
 
   padding: 24px 18px;
@@ -292,10 +292,9 @@ position: relative;
 
   transition: all 0.25s ease;
 }
-  .step:hover {
+.step:hover {
   transform: translateY(-4px);
-  border-color: #00a984;
-  background: rgba(255,255,255,0.07);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 .step-number {
   width: 42px;
