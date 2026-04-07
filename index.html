@@ -274,20 +274,32 @@ position: relative;
 
 .steps {
   display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  text-align: center;
-  color: #ffffff;
+  justify-content: center;
+  gap: 24px;
   margin-top: 30px;
 }
 
 .step {
   flex: 1;
-}
+  max-width: 260px;
 
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+
+  padding: 24px 18px;
+  text-align: center;
+
+  transition: all 0.25s ease;
+}
+  .step:hover {
+  transform: translateY(-4px);
+  border-color: #00a984;
+  background: rgba(255,255,255,0.07);
+}
 .step-number {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: #00a984;
   color: white;
@@ -296,10 +308,18 @@ position: relative;
   align-items: center;
   justify-content: center;
 
-  margin: 0 auto 10px;
+  margin: 0 auto 14px;
   font-weight: bold;
 }
-  
+  .step h3 {
+  color: white;
+  margin-bottom: 8px;
+}
+
+.step p {
+  color: rgba(255,255,255,0.8);
+  font-size: 14px;
+}
 
   /* ── BENEFITS ── */
   .benefits { background: var(--teal-dark); }
