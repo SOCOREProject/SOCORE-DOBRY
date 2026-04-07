@@ -1255,6 +1255,33 @@ function showPartner(id) {
   info.innerHTML = data[id];
   info.style.display = "block";
 }
+    <script id="partner-accordion-script">
+document.querySelectorAll('.partner-card').forEach(card => {
+  card.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const targetId = this.getAttribute('href').replace('#', '');
+    const target = document.getElementById(targetId);
+
+    if (!target) return;
+
+    // 🔥 zamknij wszystkie
+    document.querySelectorAll('.partner-accordion').forEach(el => {
+      el.removeAttribute('open');
+    });
+
+    // 🔥 otwórz kliknięty
+    target.setAttribute('open', true);
+
+    // 🔥 scroll
+    target.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center'
+    });
+  });
+});
+</script>
+💥 Efekt końcowy
 </script>
 </body>
 </html>
