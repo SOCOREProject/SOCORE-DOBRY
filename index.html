@@ -1044,8 +1044,8 @@ async function handleSubmit(e) {
   const data = Object.fromEntries(formData);
 
   // Jeśli nie ma Formspree - pokaż sukces po 1s (do testowania wyglądu)
-  if (FORM_ACTION === "YOUR_FORMSPREE_URL") {
-    setTimeout(() => {
+const FORM_ACTION = "https://formspree.io/f/xdapgewk";
+  setTimeout(() => {
       document.getElementById('rsg-form').style.display = 'none';
       document.getElementById('success-box').style.display = 'block';
     }, 800);
