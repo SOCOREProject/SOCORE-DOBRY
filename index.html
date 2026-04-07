@@ -1242,49 +1242,42 @@ window.addEventListener("load", function() {
 });
 </script>
   <script>
-function showPartner(id) {
-  const info = document.getElementById("partner-info");
+document.addEventListener("DOMContentLoaded", function () {
 
-  const data = {
-    us: "Uniwersytet Śląski w Katowicach – koordynator projektu SOCORE.",
-    um: "Urząd Marszałkowski – odpowiedzialny za polityki regionalne.",
-    utrecht: "Provincie Utrecht – partner z Holandii.",
-    hu: "HU University – uczelnia badawcza.",
-    anci: "ANCI Liguria – reprezentacja regionów włoskich.",
-    baixo: "Baixo Alentejo – partner z Portugalii.",
-    lic: "Lithuanian Innovation Centre – wsparcie innowacji.",
-    nard: "National Agency for Research and Development.",
-    mer: "Ministry of Education and Research – Mołdawia."
-  };
+  const cards = document.querySelectorAll('.partner-card');
 
-  info.innerHTML = data[id];
-  info.style.display = "block";
-}
-    <script id="partner-accordion-script">
-document.querySelectorAll('.partner-card').forEach(card => {
-  card.addEventListener('click', function(e) {
-    e.preventDefault();
+  cards.forEach(card => {
+    card.addEventListener('click', function (e) {
+      e.preventDefault();
 
-    const targetId = this.getAttribute('href').replace('#', '');
-    const target = document.getElementById(targetId);
+      const targetId = this.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
 
-    if (!target) return;
+      if (!target) {
+        console.log("Nie znaleziono:", targetId);
+        return;
+      }
 
-    // 🔥 zamknij wszystkie
-    document.querySelectorAll('.partner-accordion').forEach(el => {
-      el.removeAttribute('open');
-    });
+      // zamknij wszystkie
+      document.querySelectorAll('.partner-accordion').forEach(el => {
+        el.removeAttribute('open');
+      });
 
-    // 🔥 otwórz kliknięty
-    target.setAttribute('open', true);
+      // otwórz właściwy
+      target.setAttribute('open', true);
 
-    // 🔥 scroll
-    target.scrollIntoView({
-      behavior: 'smooth',
-      block: 'center'
+      // scroll
+      setTimeout(() => {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+      }, 100);
     });
   });
+
 });
+</script>
 </script>
 </body>
 </html>
