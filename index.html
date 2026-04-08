@@ -1392,33 +1392,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 100);
     });
   });
-<script id="cookie-script">
-document.addEventListener("DOMContentLoaded", function () {
 
-  const banner = document.getElementById("cookieBanner");
-  const btn = document.getElementById("acceptCookies");
-
-  // 🔥 jeśli już zaakceptowane → nie pokazuj
-  if (localStorage.getItem("cookiesAccepted") === "true") {
-    banner.style.display = "none";
-  }
-
-  // 🔥 klik → zapisz + ukryj
-  btn.addEventListener("click", function () {
-    localStorage.setItem("cookiesAccepted", "true");
-    banner.style.display = "none";
-    btn.addEventListener("click", function () {
-  localStorage.setItem("cookiesAccepted", "true");
-  banner.classList.add("hide");
-
-  setTimeout(() => {
-    banner.style.display = "none";
-  }, 300);
-});
-  });
-
-});
-</script>
 });
 </script>
 </script>
