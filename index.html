@@ -813,6 +813,29 @@ position: relative;
   .social-proof {
   border: 3px solid red;
 }
+  .two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.proof-item {
+  text-align: center;
+}
+
+/* 📱 mobile */
+@media (max-width: 768px) {
+  .two-columns {
+    grid-template-columns: 1fr;
+  }
+}
+  .proof-item {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
 </style>
 </head>
 <body>
@@ -883,21 +906,30 @@ position: relative;
 
 <!-- SOCIAL PROOF -->
 <div class="social-proof">
-  <div class="proof-inner">
-    <p class="proof-quote"><span class="proof-mark">“</span>SOCORE łączy to, czego najbardziej brakuje w ekosystemie innowacji - ludzi z różnych instytucji, którzy naprawdę chcą coś zmienić.<span class="proof-mark">”</span></p>
-    <div class="proof-author">Paulina Czernek</div>
-    <div class="proof-role">Urząd Marszałkowski Województwa Śląskiego · Partner projektu SOCORE (PP02)</div>
-    <!-- SEPARATOR -->
-    <div class="proof-separator"></div>
+  <div class="proof-inner two-columns">
+
+    <!-- CYTAT 1 -->
+    <div class="proof-item">
+      <p class="proof-quote">
+        <span class="proof-mark">“</span>
+        SOCORE łączy to, czego najbardziej brakuje w ekosystemie innowacji - ludzi z różnych instytucji, którzy naprawdę chcą coś zmienić.
+        <span class="proof-mark">”</span>
+      </p>
+      <div class="proof-author">Paulina Czernek</div>
+      <div class="proof-role">Urząd Marszałkowski Województwa Śląskiego · Partner projektu SOCORE (PP02)</div>
+    </div>
 
     <!-- CYTAT 2 -->
-    <p class="proof-quote">
-      <span class="proof-mark">“</span>
-      W Baixo Alentejo zobaczyliśmy regiony, które skutecznie wdrażają innowacje pomimo ograniczonych zasobów. Ich wspólną cechą jest świadomie zbudowana sieć interesariuszy — ludzi, którzy rozumieją projekt, ufają mu i czują się jego częścią.
-      <span class="proof-mark">”</span>
-    </p>
-    <div class="proof-author">Maria Garus</div>
-    <div class="proof-role">Koordynator projektu SOCORE — refleksja po Study Visit w Portugalii, marzec 2026</div>
+    <div class="proof-item">
+      <p class="proof-quote">
+        <span class="proof-mark">“</span>
+        W Baixo Alentejo zobaczyliśmy regiony, które skutecznie wdrażają innowacje pomimo ograniczonych zasobów. Ich wspólną cechą jest świadomie zbudowana sieć interesariuszy — ludzi, którzy rozumieją projekt, ufają mu i czują się jego częścią.
+        <span class="proof-mark">”</span>
+      </p>
+      <div class="proof-author">Maria Garus</div>
+      <div class="proof-role">Koordynator projektu SOCORE — refleksja po Study Visit w Portugalii, marzec 2026</div>
+    </div>
+
   </div>
 </div>
 
