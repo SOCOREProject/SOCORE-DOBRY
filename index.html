@@ -772,16 +772,21 @@ position: relative;
   font-size: clamp(17px,2.2vw,22px);
   font-weight: 700;
   color: var(--dark);
-  line-height: 1.5;
+
+  line-height: 1.6; /* 🔥 równa, spokojna interlinia */
   margin: 0;
   margin-bottom: 16px;
+
   font-style: italic;
   padding: 0 10px;
+
+  display: block;
 }
 
 .proof-mark {
-  font-size: 1.8em;
-  vertical-align: middle;
+  font-size: 1em;           /* 🔥 KLUCZ */
+  line-height: 0;           /* 🔥 nie rozpycha linii */
+  vertical-align: baseline; /* 🔥 stabilne */
 }
 
 .proof-author {
