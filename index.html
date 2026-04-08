@@ -1359,35 +1359,16 @@ window.addEventListener("load", function() {
 });
 </script>
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+function acceptCookies() {
+  localStorage.setItem("cookiesAccepted", "true");
+  document.getElementById("cookie-banner").style.display = "none";
+}
 
-  const cards = document.querySelectorAll('.partner-card');
-
-  cards.forEach(card => {
-    card.addEventListener('click', function (e) {
-      e.preventDefault();
-
-      const targetId = this.getAttribute('href').substring(1);
-      const target = document.getElementById(targetId);
-
-      if (!target) return;
-
-      document.querySelectorAll('.partner-accordion').forEach(el => {
-        el.removeAttribute('open');
-      });
-
-      target.setAttribute('open', true);
-
-      setTimeout(() => {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'center'
-        });
-      }, 100);
-    });
-  });
-
-}); /* 🔥 TO MUSI BYĆ */
+window.addEventListener("load", function() {
+  if (localStorage.getItem("cookiesAccepted") === "true") {
+    document.getElementById("cookie-banner").style.display = "none";
+  }
+});
 </script>
 </body>
 </html>
